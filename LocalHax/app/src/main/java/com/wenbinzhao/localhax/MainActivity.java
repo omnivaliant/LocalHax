@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     Button btnGoose;
-    TextView txtMain;
+    // TextView txtMain;
     ToggleButton tgl00;
 
     @Override
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         btnGoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtMain.setText("Quack!");
+               // txtMain.setText("Quack!");
                 // btnGoose.setSelected(true);
                 tgl00.toggle();
             }
