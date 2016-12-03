@@ -8,13 +8,14 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    static ToggleButton[][] btn = new ToggleButton[3][3];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ToggleButton[][] btn = new ToggleButton[3][3];
         btn[0][0]=(ToggleButton)findViewById(R.id.b00);
         btn[0][1]=(ToggleButton)findViewById(R.id.b01);
         btn[0][2]=(ToggleButton)findViewById(R.id.b02);
@@ -50,11 +51,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    static void flipNeigh(ToggleButton btn){
-        String id=btn.getResources().getResourceEntryName(btn.getId());
+    static void flipNeigh(ToggleButton butt){
+        String id=butt.getResources().getResourceEntryName(butt.getId());
         int x = Character.getNumericValue(id.charAt(1));
         int y = Character.getNumericValue(id.charAt(2));
-        btn.setText(x+","+y);
+        butt.toggle();
+        if(!(x-1<0))
+            btn[x-1][y].toggle();
+        if(!(x+1>2))
+            btn[x+1][y].toggle();
+        if(!(y-1<0))
+            btn[x][y-1].toggle();
+        if(!(y+1>2))
+            btn[x][y+1].toggle();
     }
 
 }
