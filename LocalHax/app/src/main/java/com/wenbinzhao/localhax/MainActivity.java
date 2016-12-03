@@ -27,6 +27,81 @@ public class MainActivity extends AppCompatActivity {
         btn[2][2]=(ToggleButton)findViewById(R.id.b22);
 
         final Button btnGoose = (Button)findViewById(R.id.goose);
+
+        btn[0][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[0][0]);
+            }
+
+        });
+
+        btn[0][1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[0][1]);
+            }
+
+        });
+
+        btn[0][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[0][2]);
+            }
+
+        });
+
+        btn[1][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[1][0]);
+            }
+
+        });
+
+        btn[1][1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[1][1]);
+            }
+
+        });
+
+        btn[1][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[1][2]);
+            }
+
+        });
+
+        btn[2][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[2][0]);
+            }
+
+        });
+
+        btn[2][1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[2][1]);
+            }
+
+        });
+
+        btn[2][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[2][2]);
+            }
+
+        });
+
+
+
         btnGoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+
 
         /*
         btnGoose.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         String id=butt.getResources().getResourceEntryName(butt.getId());
         int x = Character.getNumericValue(id.charAt(1));
         int y = Character.getNumericValue(id.charAt(2));
-        butt.toggle();
+
         if(!(x-1<0))
             btn[x-1][y].toggle();
         if(!(x+1>2))
