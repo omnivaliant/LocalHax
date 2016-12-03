@@ -1,28 +1,123 @@
 package com.wenbinzhao.localhax;
 
-import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ToggleButton;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ToggleButton;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnGoose;
-    // TextView txtMain;
-    ToggleButton tgl00;
+    static ToggleButton[][] btn = new ToggleButton[3][3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnGoose = (Button) findViewById(R.id.goose);
-        tgl00 = (ToggleButton) findViewById(R.id.b00);
+        btn[0][0]=(ToggleButton)findViewById(R.id.b00);
+        btn[0][1]=(ToggleButton)findViewById(R.id.b01);
+        btn[0][2]=(ToggleButton)findViewById(R.id.b02);
+        btn[1][0]=(ToggleButton)findViewById(R.id.b10);
+        btn[1][1]=(ToggleButton)findViewById(R.id.b11);
+        btn[1][2]=(ToggleButton)findViewById(R.id.b12);
+        btn[2][0]=(ToggleButton)findViewById(R.id.b20);
+        btn[2][1]=(ToggleButton)findViewById(R.id.b21);
+        btn[2][2]=(ToggleButton)findViewById(R.id.b22);
 
+        final Button btnGoose = (Button)findViewById(R.id.goose);
+
+        btn[0][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[0][0]);
+            }
+
+        });
+
+        btn[0][1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[0][1]);
+            }
+
+        });
+
+        btn[0][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[0][2]);
+            }
+
+        });
+
+        btn[1][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[1][0]);
+            }
+
+        });
+
+        btn[1][1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[1][1]);
+            }
+
+        });
+
+        btn[1][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[1][2]);
+            }
+
+        });
+
+        btn[2][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[2][0]);
+            }
+
+        });
+
+        btn[2][1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[2][1]);
+            }
+
+        });
+
+        btn[2][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[2][2]);
+            }
+
+        });
+
+
+
+        btnGoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for(int i=0;i<3;i++){
+                    for(int j=0;j<3;j++) {
+                        btn[i][j].setChecked(false);
+                    }
+                }
+            }
+        });
+
+
+
+
+
+        /*
         btnGoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,6 +126,23 @@ public class MainActivity extends AppCompatActivity {
                 tgl00.toggle();
             }
         });
+        */
 
     }
+
+    static void flipNeigh(ToggleButton butt){
+        String id=butt.getResources().getResourceEntryName(butt.getId());
+        int x = Character.getNumericValue(id.charAt(1));
+        int y = Character.getNumericValue(id.charAt(2));
+
+        if(!(x-1<0))
+            btn[x-1][y].toggle();
+        if(!(x+1>2))
+            btn[x+1][y].toggle();
+        if(!(y-1<0))
+            btn[x][y-1].toggle();
+        if(!(y+1>2))
+            btn[x][y+1].toggle();
+    }
+
 }
