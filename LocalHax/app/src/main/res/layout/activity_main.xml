@@ -63,6 +63,6 @@
         android:layout_width="match_parent"
         android:gravity="center"
         android:layout_height="57dp"
-        android:id="@+id/button"
+        android:id="@+id/goose"
         android:elevation="0dp" />
 </LinearLayout>
