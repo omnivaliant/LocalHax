@@ -2,6 +2,7 @@ package com.wenbinzhao.localhax;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btn[2][1]=(ToggleButton)findViewById(R.id.b21);
         btn[2][2]=(ToggleButton)findViewById(R.id.b22);
 
-        final Button btnGoose = (Button)findViewById(R.id.goose);
+        Button btnGoose = (Button)findViewById(R.id.goose);
 
         btn[0][0].setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    static void flipNeigh(ToggleButton butt){
+    void flipNeigh(ToggleButton butt){
         String id=butt.getResources().getResourceEntryName(butt.getId());
         int x = Character.getNumericValue(id.charAt(1));
         int y = Character.getNumericValue(id.charAt(2));
@@ -143,6 +144,24 @@ public class MainActivity extends AppCompatActivity {
             btn[x][y-1].toggle();
         if(!(y+1>2))
             btn[x][y+1].toggle();
+
+        checkWin();
+
+    }
+
+    void checkWin(){
+        boolean win = true;
+        for (int i=0; i<3; i++){
+            for (int j=0; j<3; j++){
+                if(!(btn[i][j].isChecked()))
+                    win=false;
+            }
+        }
+
+        if(win) {
+            Toast.makeText(MainActivity.this,"QUACK!",Toast.LENGTH_LONG).show();
+
+        }
     }
 
 }
