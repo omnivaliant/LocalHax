@@ -150,6 +150,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void scramble(){
-        
+        int r =(int)(Math.random()*8)+1;
+        for(int i=r;i>0;i--){
+            int x=(int)(Math.random()*3);
+            int y=(int)(Math.random()*3);
+            btn[x][y].toggle();
+        }
     }
 }
