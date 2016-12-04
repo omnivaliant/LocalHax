@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Watergoose</string>
+    <string name="app_name">WatRGoose</string>
     <string name="goose_click">Quack!</string>
     <string name="empty"></string>
 </resources>
