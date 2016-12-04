@@ -114,21 +114,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-        /*
-        btnGoose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // txtMain.setText("Quack!");
-                // btnGoose.setSelected(true);
-                tgl00.toggle();
-            }
-        });
-        */
-
     }
 
     void flipNeigh(ToggleButton butt){
@@ -159,9 +144,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(win) {
-            Toast.makeText(MainActivity.this,"QUACK!",Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this,"HONK HONK-ING HONK HONK!",Toast.LENGTH_LONG).show();
 
         }
     }
 
+    void scramble(){
+        
+    }
 }
