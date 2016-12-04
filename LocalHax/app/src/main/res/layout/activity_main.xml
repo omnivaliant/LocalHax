@@ -20,14 +20,14 @@
         <TableRow android:layout_weight=".3">
             <ToggleButton android:id="@+id/b00"
                 android:transitionName="b00"
-                android:background="@drawable/btnimg"
+                android:background="@drawable/btn00"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="0.1"
                 android:textOff="@string/empty"
                 android:textOn="@string/empty" />
             <ToggleButton android:id="@+id/b01"
-                android:background="@drawable/btnimg"
+                android:background="@drawable/btn10"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="0.1"
@@ -35,7 +35,7 @@
                 android:textOn="@string/empty" />
 
             <ToggleButton android:id="@+id/b02"
-                android:background="@drawable/btnimg"
+                android:background="@drawable/btn20"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="0.1"
@@ -49,7 +49,7 @@
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="0.1"
-                android:background="@drawable/btnimg"
+                android:background="@drawable/btn01"
                 android:textOff="@string/empty"
                 android:textOn="@string/empty" />
 
@@ -57,7 +57,7 @@
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="0.1"
-                android:background="@drawable/btnimg"
+                android:background="@drawable/btn11"
                 android:textOff="@string/empty"
                 android:textOn="@string/empty" />
 
@@ -65,7 +65,7 @@
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="0.1"
-                android:background="@drawable/btnimg"
+                android:background="@drawable/btn21"
                 android:textOff="@string/empty"
                 android:textOn="@string/empty" />
         </TableRow>
@@ -76,14 +76,14 @@
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="0.1"
-                android:background="@drawable/btnimg"
+                android:background="@drawable/btn02"
                 android:textOff="@string/empty"
                 android:textOn="@string/empty" />
             <ToggleButton android:id="@+id/b21"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="0.1"
-                android:background="@drawable/btnimg"
+                android:background="@drawable/btn12"
                 android:textOff="@string/empty"
                 android:textOn="@string/empty" />
 
@@ -91,7 +91,7 @@
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:layout_weight="0.1"
-                android:background="@drawable/btnimg"
+                android:background="@drawable/btn22"
                 android:textOff="@string/empty"
                 android:textOn="@string/empty" />
         </TableRow>
@@ -108,12 +108,4 @@
 
     </TableLayout>
 
-    <Button
-        android:text="Attacking Geese!"
-        android:textSize="24dp"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="57dp"
-        android:id="@+id/goose"
-        android:elevation="0dp" />
 </LinearLayout>
