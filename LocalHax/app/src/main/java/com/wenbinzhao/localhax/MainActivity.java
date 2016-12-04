@@ -107,10 +107,11 @@ public class MainActivity extends AppCompatActivity {
         btnGoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for(int i=0;i<3;i++){
-                    for(int j=0;j<3;j++) {
-                        btn[i][j].setChecked(false);
-                    }
+                int r =(int)(Math.random()*8)+1;
+                for(int i=r;i>0;i--){
+                    int x=(int)(Math.random()*3);
+                    int y=(int)(Math.random()*3);
+                    btn[x][y].toggle();
                 }
             }
         });
@@ -150,9 +151,5 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,"HONK HONK-ING HONK HONK!",Toast.LENGTH_LONG).show();
 
         }
-    }
-
-    void scramble(){
-        
     }
 }
