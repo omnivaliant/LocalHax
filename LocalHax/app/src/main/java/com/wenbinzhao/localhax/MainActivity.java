@@ -2,6 +2,7 @@ package com.wenbinzhao.localhax;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +27,82 @@ public class MainActivity extends AppCompatActivity {
         btn[2][1]=(ToggleButton)findViewById(R.id.b21);
         btn[2][2]=(ToggleButton)findViewById(R.id.b22);
 
-        final Button btnGoose = (Button)findViewById(R.id.goose);
+        Button btnGoose = (Button)findViewById(R.id.goose);
+
+        btn[0][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[0][0]);
+            }
+
+        });
+
+        btn[0][1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[0][1]);
+            }
+
+        });
+
+        btn[0][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[0][2]);
+            }
+
+        });
+
+        btn[1][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[1][0]);
+            }
+
+        });
+
+        btn[1][1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[1][1]);
+            }
+
+        });
+
+        btn[1][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[1][2]);
+            }
+
+        });
+
+        btn[2][0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[2][0]);
+            }
+
+        });
+
+        btn[2][1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[2][1]);
+            }
+
+        });
+
+        btn[2][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flipNeigh(btn[2][2]);
+            }
+
+        });
+
+
+
         btnGoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,24 +114,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        btnGoose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               // txtMain.setText("Quack!");
-                // btnGoose.setSelected(true);
-                tgl00.toggle();
-            }
-        });
-        */
-
     }
 
-    static void flipNeigh(ToggleButton butt){
+    void flipNeigh(ToggleButton butt){
         String id=butt.getResources().getResourceEntryName(butt.getId());
         int x = Character.getNumericValue(id.charAt(1));
         int y = Character.getNumericValue(id.charAt(2));
-        butt.toggle();
+
         if(!(x-1<0))
             btn[x-1][y].toggle();
         if(!(x+1>2))
@@ -64,6 +129,32 @@ public class MainActivity extends AppCompatActivity {
             btn[x][y-1].toggle();
         if(!(y+1>2))
             btn[x][y+1].toggle();
+
+        checkWin();
+
     }
 
+    void checkWin(){
+        boolean win = true;
+        for (int i=0; i<3; i++){
+            for (int j=0; j<3; j++){
+                if(!(btn[i][j].isChecked()))
+                    win=false;
+            }
+        }
+
+        if(win) {
+            Toast.makeText(MainActivity.this,"HONK HONK-ING HONK HONK!",Toast.LENGTH_LONG).show();
+
+        }
+    }
+
+    void scramble(){
+        int r =(int)(Math.random()*8)+1;
+        for(int i=r;i>0;i--){
+            int x=(int)(Math.random()*3);
+            int y=(int)(Math.random()*3);
+            btn[x][y].toggle();
+        }
+    }
 }
